@@ -1,4 +1,6 @@
     const URL = 'http://localhost:8080';
+    const token = localStorage.getItem('token');
+    console.log(token);
 
     let projectList = {};
     let project = {};
@@ -12,6 +14,7 @@
         await fetch(`${URL}/api/project`, {
             method: 'GET',
             headers: {
+                "Authorization": `Bearer ${token}`,
                 "Content-Type": "application/json",
                 "Accept": "application/json"
             }
@@ -59,6 +62,7 @@
         await fetch(`${URL}/api/project/${id}`, {
             method: 'GET',
             headers: {
+                "Authorization": `Bearer ${token}`,
                 "Content-Type": "application/json",
                 "Accept": "application/json"
             }
@@ -73,6 +77,7 @@
         await fetch(`${URL}/api/employee/rol/${id}`, {
             method: 'GET',
             headers: {
+                "Authorization": `Bearer ${token}`,
                 "Content-Type": "application/json",
                 "Accept": "application/json"
             }
@@ -98,6 +103,7 @@
         await fetch(`${URL}/api/employee/${id}`, {
             method: 'GET',
             headers: {
+                "Authorization": `Bearer ${token}`,
                 "Content-Type": "application/json",
                 "Accept": "application/json"
             }
@@ -187,6 +193,7 @@
         await fetch(`${URL}/api/project`,{
             method: 'POST',
             headers: {
+                "Authorization": `Bearer ${token}`,
                 "Content-Type": "application/json",
                 "Accept": "application/json"
             },
@@ -269,6 +276,7 @@
         await fetch(`${URL}/api/project`,{
             method: 'PUT',
             headers: {
+                "Authorization": `Bearer ${token}`,
                 "Content-Type": "application/json",
                 "Accept": "application/json"
             },
@@ -286,6 +294,7 @@
         await fetch(`${URL}/api/project/finish/${project.id_project}`,{
             method: 'PUT',
             headers: {
+                "Authorization": `Bearer ${token}`,
                 "Content-Type": "application/json",
                 "Accept": "application/json"
             },
